@@ -14,6 +14,7 @@ I dont have the time to iterate through the code.
 ...
 
 class AnitomyExport Anitomy
+...
 ```
 
 So you can build Anitomy as seperate target and link it against your library.
