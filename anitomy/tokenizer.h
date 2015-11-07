@@ -19,6 +19,8 @@
 #ifndef ANITOMY_TOKENIZER_H
 #define ANITOMY_TOKENIZER_H
 
+#include "config.h"
+
 #include "element.h"
 #include "options.h"
 #include "string.h"
@@ -26,7 +28,7 @@
 
 namespace anitomy {
 
-class Tokenizer {
+class AnitomyExport Tokenizer {
 public:
   Tokenizer(const string_t& filename, Elements& elements,
             const Options& options, token_container_t& tokens);

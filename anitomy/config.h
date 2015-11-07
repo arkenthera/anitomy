@@ -15,35 +15,15 @@
 ** You should have received a copy of the GNU General Public License
 ** along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
+#ifndef __Config_h__
+#define __Config_h__
 
-#ifndef ANITOMY_ANITOMY_H
-#define ANITOMY_ANITOMY_H
 
-#include "config.h"
-#include "element.h"
-#include "options.h"
-#include "string.h"
-#include "token.h"
+#if defined(BuildingAnitomy)
+#  define AnitomyExport __declspec( dllexport )
+#else
+#  define AnitomyExport __declspec( dllimport )
+#endif
 
-namespace anitomy {
 
-class AnitomyExport Anitomy {
-public:
-  bool Parse(string_t filename);
-
-  Elements& elements();
-  Options& options();
-  const token_container_t& tokens() const;
-
-private:
-  bool RemoveExtensionFromFilename(string_t& filename, string_t& extension) const;
-  void RemoveIgnoredStrings(string_t& filename) const;
-
-  Elements elements_;
-  Options options_;
-  token_container_t tokens_;
-};
-
-}  // namespace anitomy
-
-#endif  // ANITOMY_ANITOMY_H
+#endif

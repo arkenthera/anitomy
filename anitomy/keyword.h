@@ -19,6 +19,7 @@
 #ifndef ANITOMY_KEYWORD_H
 #define ANITOMY_KEYWORD_H
 
+#include "config.h"
 #include <initializer_list>
 #include <map>
 #include <vector>
@@ -26,11 +27,12 @@
 #include "element.h"
 #include "string.h"
 
+
 namespace anitomy {
 
 class TokenRange;
 
-class KeywordOptions {
+class AnitomyExport KeywordOptions {
 public:
   KeywordOptions() {}
   KeywordOptions(bool identifiable, bool searchable, bool valid);
@@ -40,7 +42,7 @@ public:
   bool valid = true;
 };
 
-class Keyword {
+class AnitomyExport Keyword {
 public:
   Keyword(ElementCategory category, const KeywordOptions& options);
 
@@ -48,7 +50,7 @@ public:
   KeywordOptions options;
 };
 
-class KeywordManager {
+class AnitomyExport KeywordManager {
 public:
   KeywordManager();
 

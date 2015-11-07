@@ -19,6 +19,7 @@
 #ifndef ANITOMY_TOKEN_H
 #define ANITOMY_TOKEN_H
 
+#include "config.h"
 #include <vector>
 
 #include "string.h"
@@ -52,7 +53,7 @@ enum TokenFlag {
   kFlagMaskEnclosed = kFlagEnclosed | kFlagNotEnclosed,
 };
 
-class TokenRange {
+class AnitomyExport TokenRange {
 public:
   TokenRange();
   TokenRange(size_t offset, size_t size);
@@ -61,7 +62,7 @@ public:
   size_t size;
 };
 
-class Token {
+class AnitomyExport Token {
 public:
   Token();
   Token(TokenCategory category, const string_t& content, bool enclosed);

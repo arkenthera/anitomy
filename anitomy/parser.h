@@ -19,6 +19,7 @@
 #ifndef ANITOMY_PARSER_H
 #define ANITOMY_PARSER_H
 
+#include "config.h"
 #include "element.h"
 #include "options.h"
 #include "string.h"
@@ -26,7 +27,7 @@
 
 namespace anitomy {
 
-class Parser {
+class AnitomyExport Parser {
 public:
   Parser(Elements& elements, const Options& options, token_container_t& tokens);
 

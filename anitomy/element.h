@@ -19,6 +19,7 @@
 #ifndef ANITOMY_ELEMENT_H
 #define ANITOMY_ELEMENT_H
 
+#include "config.h"
 #include <vector>
 
 #include "string.h"
@@ -59,7 +60,7 @@ typedef std::vector<element_pair_t> element_container_t;
 typedef element_container_t::iterator element_iterator_t;
 typedef element_container_t::const_iterator element_const_iterator_t;
 
-class Elements {
+class AnitomyExport Elements {
 public:
   // Capacity
   bool empty() const;
