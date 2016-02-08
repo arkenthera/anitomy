@@ -17,7 +17,7 @@ cmake_minimum_required(VERSION 2.8.12.2)
 set(CMAKE_CONFIGURATION_TYPES Debug Release)
 project(Anitomy)
 
-set(ANITOMY_SOURCES 
+set(ANITOMY_SOURCES
 	anitomy/anitomy.cpp
 	anitomy/anitomy.h
 	anitomy/element.cpp
@@ -72,6 +72,10 @@ endif()
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 
-set(ANITOMY_LIB_TYPE SHARED)
+if(BUILD_SHARED_LIBS)
+	set(ANITOMY_LIB_TYPE SHARED)
+else()
+	set(ANITOMY_LIB_TYPE STATIC)
+endif()
 
 add_library(Anitomy ${ANITOMY_LIB_TYPE} ${ANITOMY_SOURCES})
