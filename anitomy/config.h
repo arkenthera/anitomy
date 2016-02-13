@@ -18,12 +18,14 @@
 #ifndef __Config_h__
 #define __Config_h__
 
-
-#if defined(BuildingAnitomy)
-#  define AnitomyExport __declspec( dllexport )
+#ifdef _WIN32
+	#if defined(BuildingAnitomy)
+	#  define AnitomyExport __declspec( dllexport )
+	#else
+	#  define AnitomyExport __declspec( dllimport )
+	#endif
 #else
-#  define AnitomyExport __declspec( dllimport )
+	#define AnitomyExport
 #endif
-
 
 #endif
